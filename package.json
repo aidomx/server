@@ -27,8 +27,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc -w",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "postInstall": "npm run build"
   }
 }
