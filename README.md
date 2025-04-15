@@ -35,7 +35,3 @@ Karena @aidomx/server hanya sedikit bagian penting dari [@aidomx/cli](https://gi
 Aidomx server bekerja seperti expressjs, perbedaan singkatnya adalah kebebasan dalam pengembangan.
 
 Expressjs tentu punya visi dan misi sendiri, hal yang sama untuk aidomx server.
-
-```
-
-```
