@@ -34,5 +34,4 @@ export interface AppInstance {
 
   // Extendable:
   Router?: RouterMethods
-  // Client?: ClientModule;
 }
