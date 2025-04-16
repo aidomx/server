@@ -5,33 +5,44 @@
     "name": "aidomx",
     "email": "aidomxdev@gmail.com"
   },
-  "repository": "https://github.com/aidomx/server.git",
+  "type": "module",
   "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/node": "^22.14.1",
-    "dotenv": "^16.5.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   },
-  "description": "CLI for run server",
+  "description": "Server lokal for AIDOMX",
   "files": [
-    "LICENSE",
+    "dist",
     "README.md",
     "CHANGELOG.md",
-    "dist"
+    "LICENSE"
   ],
-  "homepage": "https://github.com/aidomx/server.git",
+  "homepage": "https://github.com/aidomx/server#readme",
+  "bugs": {
+    "url": "https://github.com/aidomx/server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidomx/server.git"
+  },
   "keywords": [
-    "cli",
     "server"
   ],
   "license": "MIT",
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
-    "postInstall": "npm run build"
+    "dev": "tsup --watch"
   },
-  "peerDependencies": {
-    "aidomx": "file:../aidomx"
+  "dependencies": {
+    "aidomx": "^0.0.2"
   }
 }
