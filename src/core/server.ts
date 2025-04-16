@@ -1,17 +1,17 @@
-import type { IncomingMessage, ServerResponse } from 'http';
-import { createApp } from './app';
-import type { Callback, RouterMethods } from './types';
+import type { IncomingMessage, ServerResponse } from 'http'
+import { createApp } from './app'
+import type { Callback, RouterMethods } from 'aidomx'
 
 export function createServerApp() {
-  const app = createApp();
+  const app = createApp()
 
   app.handle = (req: IncomingMessage, res: ServerResponse) => {
-    const route = app.route(req, res);
+    const route = app.route(req, res)
 
     if (req.method === 'GET') {
-      route.get(req, res);
+      route.get(req, res)
     } else if (req.method === 'POST') {
-      route.post(req, res);
+      route.post(req, res)
     }
 
     console.log(
@@ -20,17 +20,17 @@ export function createServerApp() {
       res.statusCode,
       new Date(),
       req.url
-    );
-  };
+    )
+  }
 
-  app.register = {}; // Re-init router register
+  app.register = {} // Re-init router register
 
   const router: RouterMethods = {
     get: (path: string, callback: Callback) => app.get(path, callback),
     post: (path: string, callback: Callback) => app.post(path, callback),
-  };
+  }
 
-  app.Router = router;
+  app.Router = router
 
-  return app;
+  return app
 }

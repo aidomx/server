@@ -30,5 +30,8 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "postInstall": "npm run build"
+  },
+  "peerDependencies": {
+    "aidomx": "file:../aidomx"
   }
 }

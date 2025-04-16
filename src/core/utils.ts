@@ -1,19 +1,19 @@
-import { IncomingMessage } from 'http';
-import { parse } from 'querystring';
-import { resolve } from 'path';
-import type { BodyParserCallback } from './types';
+import { IncomingMessage } from 'http'
+import { parse } from 'querystring'
+import { resolve } from 'path'
+import type { BodyParserCallback } from 'aidomx'
 
 export const bodyParser = (
   req: IncomingMessage,
   callback: BodyParserCallback
 ) => {
-  let body = '';
-  req.setEncoding('utf-8');
-  req.on('data', (chunk) => (body += chunk));
-  req.on('end', () => callback(parse(body)));
-};
+  let body = ''
+  req.setEncoding('utf-8')
+  req.on('data', (chunk) => (body += chunk))
+  req.on('end', () => callback(parse(body)))
+}
 
-export const dirname = (directory: string) => resolve(directory);
+export const dirname = (directory: string) => resolve(directory)
 
 export const mimeTypes: Record<string, string> = {
   '.html': 'text/html',
@@ -34,4 +34,4 @@ export const mimeTypes: Record<string, string> = {
   '.eot': 'application/vnd.ms-fontobject',
   '.otf': 'application/font-otf',
   '.wasm': 'application/wasm',
-};
+}

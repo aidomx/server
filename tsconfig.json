@@ -9,7 +9,11 @@
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "inlineSourceMap": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src/**/*"]
   // "exclude": ["node_modules", "**/*.spec.ts"]
